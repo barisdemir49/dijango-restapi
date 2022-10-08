@@ -15,7 +15,7 @@ class Post(models.Model):
     content = RichTextField(verbose_name="Makale İçeriği", null=False )
     createDate=models.DateTimeField(auto_now_add=True,verbose_name="Makale Ekleme Tarihi")
     isActive=models.BooleanField(default=True, verbose_name="Makale Yayın Durumu")
-    user=models.ForeignKey( User, on_delete=models.CASCADE, verbose_name="Makale Ekleyen" )
+    user=models.ForeignKey( User, on_delete=models.CASCADE, verbose_name="Makale Ekleyen")
     draft=models.BooleanField(default=False,verbose_name="Taslaklara Kayıt Edilme Durumu")
     updateDate=models.DateTimeField(auto_now_add=True,verbose_name="Güncelleme Tarihi")
     image =models.ImageField(upload_to='media/post')

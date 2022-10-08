@@ -1,5 +1,4 @@
 from rest_framework import serializers
-
 from post.models import Post
 
 
@@ -12,6 +11,16 @@ class Postserializer(serializers.ModelSerializer):
             'slug',
             'uuid',
             'image',
-            'createDate'
+            'createDate',
+            'user'
 
+        ]
+
+class PostInsertUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Post
+        fields=[
+            'title',
+            'content',
+            'image'
         ]
